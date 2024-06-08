@@ -28,13 +28,14 @@ app.use(express.json());
 
 app.use(cookieParser());
 
-app.listen(3000, () => {
-  console.log('Server is running on port localhost:3000');
+app.listen(8080, () => {
+  console.log('Server is running on port localhost:8080');
 });
 
 app.use('/api/user', userRouter);
 app.use('/api/auth', authRouter);
 app.use('/api/listing', listingRouter);
+app.use('/', (req, res)=>res.send('Server running.'));
 
 
 app.use(express.static(path.join(__dirname, '/client/dist')));
