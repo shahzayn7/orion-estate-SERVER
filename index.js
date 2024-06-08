@@ -30,6 +30,7 @@ app.listen(3000, () => {
   console.log('Server is running on port 3000!');
 });
 
+app.use('/', (req, res)=>res.send('Server is running on post 3000'));
 app.use('/api/user', userRouter);
 app.use('/api/auth', authRouter);
 app.use('/api/listing', listingRouter);
@@ -50,3 +51,5 @@ app.use((err, req, res, next) => {
     message,
   });
 });
+
+export default app
